@@ -1,10 +1,9 @@
 import pyqrcode
 import png
 from pyqrcode import QRCode
+from ContactQR import ContactDetails
 
-s = input("Enter the URL/TEXT for QRCode...\n")
-
-url = pyqrcode.create(s)
+url = pyqrcode.create(ContactDetails)
 
 url.svg("ResultQR.svg", scale = 8)
 
