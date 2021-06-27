@@ -2,9 +2,11 @@ import pyqrcode
 import png
 from pyqrcode import QRCode
 import pandas as pd
-from ContactQR import ContactDetails
+s = pd.read_csv("contactdetails.csv")
+print(s)
+import ContactDetails
+# from ContactQR import ContactDetails
 # import ContactQR
-s = ContactDetails
 
 url = pyqrcode.create(s)
 # url = pyqrcode.create(ContactQR.ContactDetails)

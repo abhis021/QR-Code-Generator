@@ -45,7 +45,7 @@ website.append(s)
 dict = {'First Name': fname, 'Last Name': lname, 'Email': email,
         'Phone': phone, 'City': city, 'Region': region, 'Country': country, 'Url': website}
 
-print(dict)
 df = pd.DataFrame(dict)
 
 df.to_csv('contactdetails.csv')
+print(s)
