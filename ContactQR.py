@@ -1,9 +1,9 @@
 # import main
 import sys
 
-
+temp_list = [2000]
 def ContactDetails():
-    temp_list = [2000]
+    
     print("Contact QR Creator")
     s = input("First Name: \n").split()
     temp_list.append(s)
@@ -37,7 +37,7 @@ def ContactDetails():
     no = {'no', 'n'}
     choice = input().lower()
     if choice in yes:
-        breakpoint
+        return temp_list
     elif choice in no:
         ContactDetails()
     else:
