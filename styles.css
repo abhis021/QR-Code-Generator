@@ -1,6 +1,7 @@
 h1{
     background-color: skyblue; color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 .topnav{
@@ -51,26 +52,33 @@ h1{
 }
 
 .Output{
+    background-color:black;
     height: 50%;
     width: 50%;
-    
-    border: 1px solid #ddd;
+    float: right;
+    margin: 0px;
+    /* padding-right: 2rem; */
+    /* border: 1px solid #ddd; */
     border-radius: 4px;
     padding: 5px;
     display: block;
     margin-top: 5px;
-    margin-left: 750px;
-    margin-right: auto;
-    
-    
+}
+
+.Output img{
+    /* float: right; */
+    border: 2px solid #333;
+    border-radius: 4px;
+    width: 30%;
 }
 .downloadbutton{
+    float: bottom;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     display: block;
-    margin-top: 5px;
-    margin-left: 750px;
-    margin-right: auto;
-    width: 50%;
+    margin-top: 5px; 
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 30%;
 }
