@@ -24,3 +24,6 @@ h1{
     background-color: #04aa6d;
     color: white;
 }
+.topnav .icon{
+    display: none;
+}
