@@ -51,12 +51,26 @@ h1{
 }
 
 .Output{
+    height: 50%;
+    width: 50%;
+    
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     display: block;
-    margin-top: 500px;
-    margin-left: auto;
+    margin-top: 5px;
+    margin-left: 750px;
     margin-right: auto;
-    width: 25%;
+    
+    
+}
+.downloadbutton{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    display: block;
+    margin-top: 5px;
+    margin-left: 750px;
+    margin-right: auto;
+    width: 50%;
 }
