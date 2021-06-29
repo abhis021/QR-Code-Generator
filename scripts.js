@@ -7,3 +7,8 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+
+  function display() {
+    var x = document.getElementsByClassName("free_text");
+    x.style.display = "block";
+  };

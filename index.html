@@ -25,7 +25,7 @@
         
     </div> -->
     <div class="topnav">
-        <a class="Active" href="#free_text.py">Free Text</a>
+        <a class="Active" onclick="display()">Free Text</a>
         <a href="#link.py">URL</a>
         <a href="#contact.py">Contact</a>
         <a href="#phone.py">Phone</a>
@@ -33,12 +33,19 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
+        
+        <!-- <p><a href="free_text.html" target="iframe_a"></a></p> -->
     </div>
 
     <div class="Output">
         <img src="ResultQR.png" alt="Result">
         <button type="download" class="downloadbutton">Download</button>
     </div>
+    <div class="free_text">
+        <br><iframe src="free_text.html" name="iframe_a" height="300px" width="300px" title="Free Text"></iframe>
+        <Textarea>This is a free text</Textarea>
+    </div>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>

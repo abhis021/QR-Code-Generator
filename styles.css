@@ -30,6 +30,7 @@ h1{
     display: none;
 }
 
+
 @media screen and (max-width:600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {float: right;
@@ -81,4 +82,8 @@ h1{
     /* margin-left: auto;
     margin-right: auto; */
     width: 30%;
+}
+
+.free_text{
+    display: none;
 }
