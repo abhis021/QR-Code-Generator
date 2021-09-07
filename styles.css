@@ -1,6 +1,7 @@
         * {
             margin: 0%;
             padding: 0%;
+            box-sizing: border-box;
         }
         
         h1 {
@@ -12,7 +13,7 @@
         }
         
         .topnav {
-            position: relative;
+
             background-color: #333;
             /* height: 50px; */
             overflow: hidden;
@@ -112,18 +113,41 @@
             width: 235px;
         }
         
-        .free_text {
-            display: none;
-        }
-        
-        .textCode {
-            z-index: 1;
+        .freeText{
             position: fixed;
-            background-color: rebeccapurple;
-            vertical-align: middle;
-            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(15, 10, 10, 0.281);
+            display: none;
+            place-items: center;
+            /* text-align: center; */
         }
-        
+        .textCode {
+            /* z-index: 1; */
+            background-color: rebeccapurple;
+            padding: 5px 15px;
+            height: 300px;
+            width: 500px;
+        }
+
+        .textCode p {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-size: larger;
+        }
+
+        #textEntered{
+            height: 200px;
+            width: 400px;
+        }
+
+        .textCode button{
+            position: relative;
+            padding: 5px;
+            text-align: center;
+            left: 40%;
+        }
+
         .modal {
             display: none;
             /* Hidden by default */

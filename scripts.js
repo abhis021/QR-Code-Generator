@@ -8,7 +8,10 @@ function myFunction() {
   }
 }
 
-function display() {
-  var x = document.getElementsByClassName("free_text");
-  x.style.display = "block";
+
+function displays() {
+  var x = document.getElementById("freeTexts");
+  x.style.display = "grid";
 };
+
+

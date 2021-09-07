@@ -4,14 +4,14 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>    
 </head>
 
 <body>
     <h1>QR Code Generator</h1>
 
     <div class="topnav">
-        <a class="Active" onclick="display()">Free Text</a>
+        <a class="Active" onclick="displays()">Free Text</a>
         <a href="#link.py">URL</a>
         <a href="#contact.py">Contact</a>
         <a href="#phone.py">Phone</a>
@@ -24,14 +24,20 @@
     </div>
 
     <!-- enter the text to generate the qr -->
-    <div class="textCode">
-        <span class="close">&times;</span>
-        <p>Enter the code that you want to display : </p>
-        <textarea id="textEntered" placeholder="Enter your text here">
-          
-        </textarea>
-        <button type=submit>Confirm</button>
+    <div class="freeText" id="freeTexts">
+        <div class="textCode">
+            <span class="close">&times;</span>
+    
+            <p>Enter the code that you want to display : </p>
+            <textarea id="textEntered" placeholder="Enter your text here">
+              
+            </textarea>
+        </br>
+        
+            <button type=submit>Confirm</button>
+        </div>
     </div>
+    
     <div class="Output">
         <img src="ResultQR.png" alt="Result">
 
