@@ -24,6 +24,27 @@
     </div>
 
     <!-- enter the text to generate the qr -->
+    
+    
+    <div class="Output">
+        <img src="ResultQR.png" alt="Result">
+
+    </div>
+
+    <button id="myBtn">Save</button>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="clsbtn" class="close">&times;</span>
+            <p>Select the type of QR you want to download</p>
+            <input type="radio"> PNG</input>
+            <input type="radio"> SVG</input><br><br>
+            <button type=submit>Confirm</button>
+        </div>
+
+    </div>
+
     <div class="freeText" id="freeTexts">
         <div class="textCode">
             <span class="close">&times;</span>
@@ -37,25 +58,7 @@
             <button type=submit>Confirm</button>
         </div>
     </div>
-    
-    <div class="Output">
-        <img src="ResultQR.png" alt="Result">
 
-    </div>
-
-    <button id="myBtn">Save</button>
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Select the type of QR you want to download</p>
-            <input type="radio"> PNG</input>
-            <input type="radio"> SVG</input><br><br>
-            <button type=submit>Confirm</button>
-        </div>
-
-    </div>
     <script>
         // Get the modal
         var modal = document.getElementById("myModal");
@@ -65,7 +68,8 @@
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
+        var spans = document.getElementsByClassName("close")[1];
+        var text = document.getElementById("freeTexts");
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
             modal.style.display = "block";
@@ -74,12 +78,21 @@
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
+
         }
 
+        spans.onclick = function() {
+            text.style.display = "none";
+
+        }
+        
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+            else if (event.target == text) {
+                text.style.display = "none";
             }
         }
     </script>

@@ -16,7 +16,7 @@
 
             background-color: #333;
             /* height: 50px; */
-            overflow: hidden;
+            /* overflow: hidden; */
             height: 50px;
             text-align: center;
         }
@@ -30,7 +30,7 @@
             padding: 14px 35px;
             height: 50px;
             text-decoration: none;
-            font: size 17px;
+            font-size: 17px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
@@ -115,6 +115,9 @@
         
         .freeText{
             position: fixed;
+            top: 0px;
+            z-index: 1;
+            overflow: auto;
             height: 100vh;
             width: 100vw;
             background-color: rgba(15, 10, 10, 0.281);
@@ -124,7 +127,7 @@
         }
         .textCode {
             /* z-index: 1; */
-            background-color: rebeccapurple;
+            background-color: rgb(171, 150, 192);
             padding: 5px 15px;
             height: 300px;
             width: 500px;
@@ -182,7 +185,7 @@
         /* The Close Button */
         
         .close {
-            color: #aaaaaa;
+            color: #858080;
             float: right;
             font-size: 28px;
             font-weight: bold;
