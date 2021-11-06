@@ -13,6 +13,18 @@ Two approaches for the same tool, creating a GUI App for desktop using python an
  To install python interpreter, first download it by [Clicking here.](https://www.python.org/)
  
  After downloading install the Python interpreter normally.
+ <br>
+ To check whether your interpreter is installed correctly and recognized properly.
+
+# Windows Specific
+ Do this inside your Command Prompt:<br>
+ <code>python --version</code>
+ <br>
+
+# Linux Specific
+Do this inside your Terminal:<br>
+ <code>python3 --version</code>
+ <br>
  
  # Windows Specific
  Do this inside your Command Prompt:<br>
