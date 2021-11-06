@@ -16,14 +16,14 @@ Two approaches for the same tool, creating a GUI App for desktop using python an
  
  # Windows Specific
  Do this inside your Command Prompt:
- <code>pip install pypng</code>
- <code>pip install pyqrcode</code>
- <code>pip install PyQt5</code>
+ <code>pip install pypng</code><br>
+ <code>pip install pyqrcode</code><br>
+ <code>pip install PyQt5</code><br>
  
  # Linux Specific
  Do this inside your Terminal:
- <code>pip3 install pypng</code>
- <code>pip3 install pyqrcode</code>
- <code>pip3 install PyQt5</code>
+ <code>pip3 install pypng</code><br>
+ <code>pip3 install pyqrcode</code><br>
+ <code>pip3 install PyQt5</code><br>
  
  After this, you should be able to run the [QR Code Generator.](https://github.com/abhis021/QR-Code-Generator)
