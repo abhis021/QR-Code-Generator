@@ -15,13 +15,13 @@ Two approaches for the same tool, creating a GUI App for desktop using python an
  After downloading install the Python interpreter normally.
  
  # Windows Specific
- Do this inside your Command Prompt:
+ Do this inside your Command Prompt:<br>
  <code>pip install pypng</code><br>
  <code>pip install pyqrcode</code><br>
  <code>pip install PyQt5</code><br>
  
  # Linux Specific
- Do this inside your Terminal:
+ Do this inside your Terminal:<br>
  <code>pip3 install pypng</code><br>
  <code>pip3 install pyqrcode</code><br>
  <code>pip3 install PyQt5</code><br>
