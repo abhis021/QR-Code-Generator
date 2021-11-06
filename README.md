@@ -2,12 +2,12 @@
 Two approaches for the same tool, creating a GUI App for desktop using python and also creating for Web Application to be hosted online basically.
 
 
-Requirements:
+# Requirements:
 
- # Python Interpreter
- # pypng
- # pyqrcode
- # PyQt5
+* Python Interpreter
+* pypng
+* pyqrcode
+* PyQt5
  
  # For any platform
  To install python interpreter, first download it by [Clicking here.](https://www.python.org/)
@@ -26,4 +26,4 @@ Requirements:
  <code>pip3 install pyqrcode</code>
  <code>pip3 install PyQt5</code>
  
- After this, you should be able to run the QR CodeGenerator.
+ After this, you should be able to run the [QR Code Generator.](https://github.com/abhis021/QR-Code-Generator)
