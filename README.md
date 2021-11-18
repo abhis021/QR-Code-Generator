@@ -34,8 +34,8 @@ Do this inside your Terminal:<br>
  
  # Linux Specific
  Do this inside your Terminal:<br>
- <code>pip3 install pypng</code><br>
- <code>pip3 install pyqrcode</code><br>
- <code>pip3 install PyQt5</code><br>
+ <code>python3 -m pip install pypng</code><br>
+ <code>python3 -m pip install pyqrcode</code><br>
+ <code>python3 -m pip install PyQt5</code><br>
  
  After this, you should be able to run the [QR Code Generator.](https://github.com/abhis021/QR-Code-Generator)
