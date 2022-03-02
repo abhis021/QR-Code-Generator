@@ -6,8 +6,9 @@ from pyqrcode import QRCode
 from PIL.ImageQt import ImageQt
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+# import matplotlib.pyplot as plt
+# import matplotlib.image as mpimg
+from PyQt5.QtGui import QPixmap
 
 class QRCodeApp(QWidget):
     def __init__(self):
@@ -57,10 +58,17 @@ class QRCodeApp(QWidget):
         url.png("ResultQR.png", scale = 6)
     
     def showQR(self):
+        graphicsView = QtWidgets.QGraphicsView(QWidget)
+
+        pix = QPixmap("ResultQR.png")
+        item = QWidgets.QGraphicsPixmapItem(pix)
+        scene = QWidgets.QGraphicsScence(self)
+        scene.addItem(item)
+        self.ui.graphicsView.setScene(scene)
         
-        img = mpimg.imread('ResultQR.png')
-        imgplot = plt.imshow(img)
-        plt.show()
+        # img = mpimg.imread('ResultQR.png')
+        # imgplot = plt.imshow(img)
+        # plt.show()
         
     def Quit(self):
         sys.exit()
