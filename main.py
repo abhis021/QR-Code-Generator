@@ -14,6 +14,12 @@ class QRCodeApp(tk.Tk):
         self.title("QR Code Generator for PC")
         self.main_ui()
 
+        # Create canvas for displaying the QR code
+        self.canvas = tk.Canvas(self, width=174, height=174)  # Set the initial canvas size based on the image size
+        self.canvas.pack(pady=20)
+
+        self.qr_image = None  # Store reference to the image
+
     def main_ui(self):
         #Label and Entry for text input
         label = tk.Label(self, text="Enter Text: ", font=("Times", 16))
@@ -41,26 +47,44 @@ class QRCodeApp(tk.Tk):
         self.qrLabel = tk.Label(self)
         self.qrLabel.pack(pady=20)
 
-
     def generate_QRCode(self):
         text = self.textEntry.get().strip()
         if not text:
             messagebox.showwarning("Input Error", "Please enter text to generate QR code.")
             return
 
-
         url = pyqrcode.create(text)
-        url.png("ResultQR.png", scale = 6)
+        url.png("ResultQR.png", scale=6)
         messagebox.showinfo("Success", "QR code generated successfully as ResultQR.png")
+
+        # Check if the file was created successfully
+        import os
+        if os.path.exists("ResultQR.png"):
+            print("QR code generated and saved successfully!")
+        else:
+            print("Failed to save QR code.")
 
     def showQR(self):
         try:
-            canvas = Canvas(self, width=300, height=300)
-            canvas.pack(pady=20)
-            img = ImageTk.PhotoImage(Image.open("ResultQR.png"))
-            canvas.create_image(20,20, image=img)
-        except FileNotFoundError:
-            messagebox.showerror("Error", "QR code image not found. Please generate it first.")
+            # Open the image directly
+            image = Image.open("ResultQR.png")
+
+            # Debugging: Show the image using the default viewer to check if it's valid
+            image.show()
+
+            self.qr_image = ImageTk.PhotoImage(image)  # Convert to Tkinter format
+
+            # Clear the previous image from the canvas
+            self.canvas.delete("all")
+
+            # Adjust canvas size based on image dimensions
+            self.canvas.config(width=image.width, height=image.height)
+
+            # Display the image on the canvas at position (0, 0)
+            self.canvas.create_image(0, 0, image=self.qr_image, anchor="nw")
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to open image: {e}")
 
 
 if __name__ == "__main__":
