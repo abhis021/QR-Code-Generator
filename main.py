@@ -1,84 +1,71 @@
-import os
-import sys
+#code by abhis021@github
 import pyqrcode
-from PyQt5 import QtGui, QtCore, QtWidgets
-from pyqrcode import QRCode
-from PIL.ImageQt import ImageQt
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-# import matplotlib.pyplot as plt
-# import matplotlib.image as mpimg
-from PyQt5.QtGui import QPixmap
+import tkinter as tk
+from tkinter import messagebox, Canvas
+from PIL import Image, ImageTk
 
-class QRCodeApp(QWidget):
+
+class QRCodeApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(700, 550)
-        self.setWindowTitle("QR Code Generator for PC")
-        self.initUI()
-        
-    def initUI(self):
-        font = QFont("Times", 16)
+        self.textEntry = None
+        self.qrLabel = None
+        self.geometry("500x200")
+        self.title("QR Code Generator for PC")
+        self.main_ui()
 
-        btn = QtWidgets.QPushButton("OK", self)
-        btn.clicked.connect(self.generate_QRCode)
-        btn.resize(100, 50)
-        btn.move(250, 400)
+    def main_ui(self):
+        #Label and Entry for text input
+        label = tk.Label(self, text="Enter Text: ", font=("Times", 16))
+        label.pack(pady=10)
 
-        btn = QtWidgets.QPushButton("View", self)
-        btn.clicked.connect(self.showQR)
-        btn.resize(100, 50)
-        btn.move(350, 400)
+        self.textEntry = tk.Entry(self, font=("Times", 16), width=40)
+        self.textEntry.pack(pady=10)
 
-        btn = QtWidgets.QPushButton("Quit", self)
-        btn.clicked.connect(self.Quit)
-        btn.resize(100, 50)
-        btn.move(450, 400)
+        #Buttons to Generate, View and Quit
 
-        mainLayout = QVBoxLayout()
-        entryLayout = QHBoxLayout()
-        buttonLayout = QHBoxLayout()
-        imageLayout = QVBoxLayout()
-        imageLayout.addStretch()
+        buttonFrame = tk.Frame(self)
+        buttonFrame.pack(pady=20)
 
-        label = QLabel("Enter Text : ")
-        label.setFont(font)
+        generateBtn = tk.Button(buttonFrame, text = "Generate QR", command = self.generate_QRCode, width = 10, height=2)
+        generateBtn.grid(row=0, column=0, padx=10)
 
-        self.textEntry = QLineEdit(self)
-        self.textEntry.setFont(font)
-        entryLayout.addWidget(label)
-        entryLayout.addWidget(self.textEntry)
-        mainLayout.addLayout(entryLayout)
+        viewBtn = tk.Button(buttonFrame, text = "View QR", command = self.showQR, width=10, height=2)
+        viewBtn.grid(row=0, column=1, padx=10)
 
-        self.setLayout(mainLayout)
+        quitBtn = tk.Button(buttonFrame, text = "Quit", command = self.quit, width=10, height=2)
+        quitBtn.grid(row=0, column=2, padx=10)
+
+        #Label for displaying the QR Code
+
+        self.qrLabel = tk.Label(self)
+        self.qrLabel.pack(pady=20)
+
 
     def generate_QRCode(self):
-        s = self.textEntry.text()
-        url = pyqrcode.create(s)
-        url.png("ResultQR.png", scale = 6)
-    
-    def showQR(self):
-        graphicsView = QtWidgets.QGraphicsView(QWidget)
+        text = self.textEntry.get().strip()
+        if not text:
+            messagebox.showwarning("Input Error", "Please enter text to generate QR code.")
+            return
 
-        pix = QPixmap("ResultQR.png")
-        item = QWidgets.QGraphicsPixmapItem(pix)
-        scene = QWidgets.QGraphicsScence(self)
-        scene.addItem(item)
-        self.ui.graphicsView.setScene(scene)
-        
-        # img = mpimg.imread('ResultQR.png')
-        # imgplot = plt.imshow(img)
-        # plt.show()
-        
-    def Quit(self):
-        sys.exit()
+
+        url = pyqrcode.create(text)
+        url.png("ResultQR.png", scale = 6)
+        messagebox.showinfo("Success", "QR code generated successfully as ResultQR.png")
+
+    def showQR(self):
+        try:
+            canvas = Canvas(self, width=300, height=300)
+            canvas.pack(pady=20)
+            img = ImageTk.PhotoImage(Image.open("ResultQR.png"))
+            canvas.create_image(20,20, image=img)
+        except FileNotFoundError:
+            messagebox.showerror("Error", "QR code image not found. Please generate it first.")
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    demo = QRCodeApp()
-    demo.show()
-    sys.exit(app.exec_())
+    app = QRCodeApp()
+    app.mainloop()
 
 
 
