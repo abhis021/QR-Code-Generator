@@ -1,7 +1,8 @@
 #code by abhis021@github
-import pyqrcode
 import tkinter as tk
-from tkinter import messagebox, Canvas
+from tkinter import messagebox
+
+import pyqrcode
 from PIL import Image, ImageTk
 
 
