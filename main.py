@@ -60,27 +60,11 @@ class QRCodeApp(tk.Tk):
 
 
     def showQR(self):
-        try:
             # Open the image directly
             image = Image.open("ResultQR.png")
 
             # Debugging: Show the image using the default viewer to check if it's valid
             image.show()
-
-            self.qr_image = ImageTk.PhotoImage(image)  # Convert to Tkinter format
-
-            # Clear the previous image from the canvas
-            self.canvas.delete("all")
-
-            # Adjust canvas size based on image dimensions
-            self.canvas.config(width=image.width, height=image.height)
-
-            # Display the image on the canvas at position (0, 0)
-            self.canvas.create_image(0, 0, image=self.qr_image, anchor="nw")
-
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to open image: {e}")
-
 
 if __name__ == "__main__":
     app = QRCodeApp()
