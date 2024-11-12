@@ -58,12 +58,6 @@ class QRCodeApp(tk.Tk):
         url.png("ResultQR.png", scale=6)
         messagebox.showinfo("Success", "QR code generated successfully as ResultQR.png")
 
-        # Check if the file was created successfully
-        import os
-        if os.path.exists("ResultQR.png"):
-            print("QR code generated and saved successfully!")
-        else:
-            print("Failed to save QR code.")
 
     def showQR(self):
         try:
