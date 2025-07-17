@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_file, send_from_director
 from qr_utils import get_qr_bytes
 import io
 import base64
+import os
 
 app = Flask(__name__)
 
@@ -35,4 +36,5 @@ def download():
     return send_file(io.BytesIO(img_bytes), mimetype="image/png", as_attachment=True, download_name="qr.png")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
