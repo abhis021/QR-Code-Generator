@@ -1,4 +1,4 @@
 ./.idea
-./.venv
+venv
 ./.vscode
 ./ResultQR.png

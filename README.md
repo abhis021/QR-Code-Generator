@@ -1,41 +1,69 @@
 # QR-Code-Generator
-Two approaches for the same tool, creating a GUI App for desktop using python and also creating for Web Application to be hosted online basically.
 
+A tool to generate QR codes using Python. Includes both a desktop GUI (PyQt5) and a web application.
 
-# Requirements:
+## Features
 
-* Python Interpreter
-* pypng
-* pyqrcode
-* PyQt5
- 
- # For any platform
- To install python interpreter, first download it by [Clicking here.](https://www.python.org/)
- 
- After downloading install the Python interpreter normally.
- <br>
- To check whether your interpreter is installed correctly and recognized properly.
+- Generate QR codes from text or URLs
+- Save QR codes as PNG images
+- Desktop GUI (PyQt5)
+- Web application support
 
-# Windows Specific
- Do this inside your Command Prompt:<br>
- <code>python --version</code>
- <br>
+## Requirements
 
-# Linux Specific
-Do this inside your Terminal:<br>
- <code>python3 --version</code>
- <br>
- 
- # Windows Specific
- Do this inside your Command Prompt:<br>
- <code>pip install pypng</code><br>
- <code>pip install pyqrcode</code><br>
- <code>pip install PyQt5</code><br>
- 
- # Linux Specific
- Do this inside your Terminal:<br>
- <code>python3 -m pip install pypng</code><br>
- <code>python3 -m pip install pyqrcode</code><br>
- <code>python3 -m pip install PyQt5</code><br>
- 
- After this, you should be able to run the [QR Code Generator.](https://github.com/abhis021/QR-Code-Generator)
+- Python 3.x
+- [pypng](https://pypi.org/project/pypng/)
+- [pyqrcode](https://pypi.org/project/PyQRCode/)
+- [PyQt5](https://pypi.org/project/PyQt5/)
+
+## Installation
+
+### 1. Install Python
+
+Download and install Python from [python.org](https://www.python.org/).
+
+Check your installation:
+
+**Windows:**
+```sh
+python --version
+```
+
+**Linux:**
+```sh
+python3 --version
+```
+
+### 2. Install Dependencies
+
+**Windows:**
+```sh
+pip install pypng pyqrcode PyQt5
+```
+
+**Linux:**
+```sh
+python3 -m pip install pypng pyqrcode PyQt5
+```
+
+## Usage
+
+Run the application:
+
+**Desktop GUI:**
+```sh
+python3 gui_app.py
+```
+
+**Web Application:**
+```sh
+python3 web_app.py
+```
+
+## License
+
+MIT
+
+## Links
+
+- [Project Repository](https://github.com/abhis021/QR-Code-Generator)
