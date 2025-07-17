@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="title-toggle">
+            <h1>QR Code Generator</h1>
+            <button class="toggle" onclick="toggleDarkMode()">🌙</button>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="left">
+            <form method="POST" class="form-row">
+                <input type="text" name="qrtext" value="{{ qrtext }}" placeholder="Enter text" required>
+                <div class="button-column">
+                    <button type="submit">Generate</button>
+                    <button formaction="/download" formmethod="POST">Download</button>
+                    <button type="button" onclick="window.location.href='/'">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="right">
+            {% if qr_img %}
+                <h3>QR Preview:</h3>
+                <img src="data:image/png;base64,{{ qr_img|b64encode }}">
+            {% else %}
+                <p>No QR code generated yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="spinner" class="spinner" style="display: none;"></div>
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('serve_script', filename='darkmode.js') }}"></script>
+</body>
+</html>

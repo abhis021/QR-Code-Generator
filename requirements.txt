@@ -1,3 +1,5 @@
 pypng
 pyqrcode
 pillow
+qrcode
+flask
